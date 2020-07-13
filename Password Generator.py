@@ -27,7 +27,7 @@ allow_spec_char = input('Allow special char?')
 if allow_spec_char=='y' and allow_numbers == 'y':
        newstring=stringbuilder + '\d'+'@_!#$%^&*()<>?/\|}{~:'
 if allow_spec_char=='n' and allow_numbers == 'y':
-       newstring=stringbuilder+'@_!#$%^&*()<>?/\|}{~:'
+       newstring=stringbuilder+'\d'
 elif allow_spec_char == 'n':
         newstring=stringbuilder
 else:
