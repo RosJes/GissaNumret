@@ -1,11 +1,8 @@
-
-'''Deklarera  variabler(hårkodat)'''
-secret_num=
+import random
+secret_num=random.randint(0,100)
 guesses=1
 guess_limit=3
 
-
-'''bygg en while loop med en kondition'''
 while(guesses<=guess_limit):
     your_guess = input('What is the number?')
     converted_guess=int(your_guess)
