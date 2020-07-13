@@ -2,7 +2,7 @@ import random
 import re
 '''step 1: generate an array of chars without conditions'''
 '''step 2: add conditions to array of chars'''
-
+'''remeber to filter out a correkt password from if statements'''
 chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@£$%^&*().,?0123456789'
 password_length=input('Password length?')
 converted_length=int(password_length)
