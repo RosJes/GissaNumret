@@ -11,11 +11,23 @@ allow_upper=input('Allow uppercase?')
 allow_numbers=input('Allow numbers?')
 for x in range(converted_length):
     if allow_upper=='y':
-        x = re.findall("[A-z @_!#$%^&*()<>?/\|}{~:]", chars)
-        password += random.choice(x)
-    else:
-        x = re.findall("[a-z @_!#$%^&*()<>?/\|}{~:]", chars)
-        password += random.choice(x)
+        x = re.findall("[A-z\d@_!#$%^&*()<>?/\|}{~:]", chars)
+        if allow_numbers=='y':
+           x = re.findall("[A-z\d@_!#$%^&*()<>?/\|}{~:]", chars)
+           password += random.choice(x)
+        else:
+            x = re.findall("[A-z @_!#$%^&*()<>?/\|}{~:]", chars)
+            password += random.choice(x)
+    if allow_upper=='n':
+        x = re.findall("[a-z \d@_!#$%^&*()<>?/\|}{~:]", chars)
+        if allow_numbers=='y':
+           x = re.findall("[a-z\d@_!#$%^&*()<>?/\|}{~:]", chars)
+           password += random.choice(x)
+        else:
+            x = re.findall("[a-z@_!#$%^&*()<>?/\|}{~:]", chars)
+            password += random.choice(x)
+
+
 
 '''Reg Ex check: upper, lower osv'''
 '''fix logical problem with correct if statements'''
