@@ -7,30 +7,18 @@ chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@£$%^&*().,?01234
 password_length=input('Password length?')
 converted_length=int(password_length)
 password=''
+stringbuilder=''
 allow_upper=input('Allow uppercase?')
+allow_lower=input('Allow lowercase?')
 allow_numbers=input('Allow numbers?')
+allow_special_char=input('Allow special character')
 for x in range(converted_length):
-    if allow_upper=='y':
-        x = re.findall("[A-z\d@_!#$%^&*()<>?/\|}{~:]", chars)
-        if allow_numbers=='y':
-           x = re.findall("[A-z\d@_!#$%^&*()<>?/\|}{~:]", chars)
-           password += random.choice(x)
-        else:
-            x = re.findall("[A-z @_!#$%^&*()<>?/\|}{~:]", chars)
-            password += random.choice(x)
-    if allow_upper=='n':
-        x = re.findall("[a-z \d@_!#$%^&*()<>?/\|}{~:]", chars)
-        if allow_numbers=='y':
-           x = re.findall("[a-z\d@_!#$%^&*()<>?/\|}{~:]", chars)
-           password += random.choice(x)
-        else:
-            x = re.findall("[a-z@_!#$%^&*()<>?/\|}{~:]", chars)
-            password += random.choice(x)
-
-
+        x = re.findall("[A-z\d @_!#$%^&*()<>?/\|}{~:]", chars)
+        password += random.choice(x)
 
 '''Reg Ex check: upper, lower osv'''
 '''fix logical problem with correct if statements'''
+'''make string builder filtered by the questions, then apply to regex method'''
 
 print(f'Your generated password is: {password}')
 
