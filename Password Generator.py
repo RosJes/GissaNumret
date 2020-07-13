@@ -1,5 +1,6 @@
 import random
 import re
+'''Rewrite prettier it's a mess!'''
 '''step 1: generate an array of chars without conditions'''
 '''step 2: add conditions to array of chars'''
 '''remeber to filter out a correkt password from if statements'''
