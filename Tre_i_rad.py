@@ -5,18 +5,14 @@
 '''What classes do you need? player etc.'''
 '''Learn classes,methods etc.'''
 
-'''display field'''
-
-'''row,cols=(3,3)
-arr=[[0]*cols]*row
-
-for row in arr:
+'''display field nad choosing coordinates'''
+q = [[' ']*3]*3
+x_guess=input('Select destination x')
+y_guess=input('Select destination y')
+q[int(x_guess)][int(y_guess)] = 'X'
+for row in q:
     print(row)
-'''
-def draw_game_board():
-    print('Hello')
 
-draw_game_board()
 '''display field'''
 '''create method'''
 '''user input'''
