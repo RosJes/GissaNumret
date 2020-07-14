@@ -1,4 +1,4 @@
-import os
+import random
 '''make a play field '''
 '''what is the game structure?'''
 '''figure out user input, what happens?'''
@@ -12,11 +12,14 @@ def play_game():
     play_rows = 1
     arr = [[0 for i in range(cols)]
            for j in range(rows)]
-    while(play_rows<=3):
+    while(play_rows<=6):
       x_guess = input('Select destination x')
       y_guess = input('Select destination y')
+      comp_movex=random.randint(0, 3)
+      comp_movey=random.randint(0, 3)
       play_rows+=1
       arr[int(x_guess)][int(y_guess)] = 1
+      arr[int(comp_movex)][int(comp_movey)] = 2
       for row in arr:
         print(row)
 
