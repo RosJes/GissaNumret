@@ -6,13 +6,23 @@
 '''Learn classes,methods etc.'''
 
 '''display field nad choosing coordinates'''
-q = [[' ']*3]*3
-x_guess=input('Select destination x')
-y_guess=input('Select destination y')
-q[int(x_guess)][int(y_guess)] = 'X'
-for row in q:
-    print(row)
 
+rows, cols = (3, 3)
+def play_game():
+    play_rows = 1
+    while(play_rows<=3):
+
+      arr = [[0 for i in range(cols)] for j in range(rows)]
+      x_guess = input('Select destination x')
+      y_guess = input('Select destination y')
+      play_rows+=1
+      arr[int(x_guess)][int(y_guess)] = 1
+      for row in arr:
+        print(row)
+
+
+
+play_game()
 '''display field'''
 '''create method'''
 '''user input'''
