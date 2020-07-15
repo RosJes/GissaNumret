@@ -31,10 +31,15 @@ def play_game():
       arr[int(x_guess)][int(y_guess)] = 1
       arr[int(comp_movex)][int(comp_movey)] = 5
       wincheck1 = arr[0][0] + arr[0][1] + arr[0][2]
+      wincheck4=arr[1][0] + arr[1][1] + arr[1][2]
+      wincheck5 = arr[2][0] + arr[2][1] + arr[2][2]
       wincheck2=arr[0][0] + arr[1][0] + arr[2][0]
-      wincheck3=arr[2][0] + arr[2][1] + arr[2][2]
+      wincheck6 = arr[0][1] + arr[1][1] + arr[2][1]
+      wincheck7 = arr[0][2] + arr[1][2] + arr[2][2]
+      wincheck3=arr[0][0] + arr[1][1] + arr[2][2]
+      wincheck8 = arr[0][2] + arr[1][2] + arr[2][0]
       '''make a search loop or better solution'''
-      print(wincheck1,wincheck2,wincheck3)
+
       print('1   2   3')
       print('------------')
       for row in arr:
@@ -42,10 +47,10 @@ def play_game():
           print(i,row)
           if(i>=3):
               i=0
-      if wincheck1==3 or wincheck2==3 or wincheck3==3:
+      if wincheck1==3 or wincheck2==3 or wincheck3==3or wincheck4==3or wincheck5==3or wincheck6==3or wincheck7==3or wincheck8==3:
         print('you win')
         break
-      elif wincheck1==15 or wincheck2==15 or wincheck3==15:
+      elif wincheck1==15 or wincheck2==15 or wincheck3==15or wincheck4==15or wincheck5==15or wincheck6==15or wincheck7==15or wincheck8==15:
           print('computer win')
           break
 
