@@ -15,8 +15,7 @@ def play_game():
     arr = [[0 for i in range(cols)]
            for j in range(rows)]
 
-    print('1   2   3')
-    print('------------')
+    print('  1   2   3')
     for row in arr:
         i += 1
         print(i, row)
@@ -30,7 +29,8 @@ def play_game():
       play_rows+=1
 
       if arr[int(comp_movex)][int(comp_movey)] !=0 or arr[int(x_guess)][int(y_guess)]!=0:
-          print('invalid try again!')
+          print('you cannot rewrite your own or opponents move! try again')
+          '''put a while loop in here'''
       else:
           arr[int(comp_movex)][int(comp_movey)] = 5
           arr[int(x_guess)][int(y_guess)] = 1
