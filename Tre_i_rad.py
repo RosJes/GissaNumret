@@ -8,12 +8,13 @@ import random
 '''display field nad choosing coordinates'''
 ''''''
 rows, cols = (3, 3)
-
+win=False
 def play_game():
     i = 0
     play_rows = 1
     arr = [[0 for i in range(cols)]
            for j in range(rows)]
+
     print('1   2   3')
     print('------------')
     for row in arr:
@@ -21,14 +22,19 @@ def play_game():
         print(i, row)
         if (i >= 3):
             i = 0
-    while(play_rows<=6):
+    while(True):
       x_guess = input('Select destination x')
       y_guess = input('Select destination y')
       comp_movex=random.randint(0, 2)
       comp_movey=random.randint(0, 2)
       play_rows+=1
       arr[int(x_guess)][int(y_guess)] = 1
-      arr[int(comp_movex)][int(comp_movey)] = 2
+      arr[int(comp_movex)][int(comp_movey)] = 5
+      wincheck1 = arr[0][0] + arr[0][1] + arr[0][2]
+      wincheck2=arr[0][0] + arr[1][0] + arr[2][0]
+      wincheck3=arr[2][0] + arr[2][1] + arr[2][2]
+      '''make a search loop or better solution'''
+      print(wincheck1,wincheck2,wincheck3)
       print('1   2   3')
       print('------------')
       for row in arr:
@@ -36,6 +42,12 @@ def play_game():
           print(i,row)
           if(i>=3):
               i=0
+      if wincheck1==3 or wincheck2==3 or wincheck3==3:
+        print('you win')
+        break
+      elif wincheck1==15 or wincheck2==15 or wincheck3==15:
+          print('computer win')
+          break
 
 play_game()
 '''display field'''
