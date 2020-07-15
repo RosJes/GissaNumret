@@ -28,8 +28,13 @@ def play_game():
       comp_movex=random.randint(0, 2)
       comp_movey=random.randint(0, 2)
       play_rows+=1
-      arr[int(x_guess)][int(y_guess)] = 1
-      arr[int(comp_movex)][int(comp_movey)] = 5
+
+      if arr[int(comp_movex)][int(comp_movey)] !=0 or arr[int(x_guess)][int(y_guess)]!=0:
+          print('invalid try again!')
+      else:
+          arr[int(comp_movex)][int(comp_movey)] = 5
+          arr[int(x_guess)][int(y_guess)] = 1
+
       wincheck1 = arr[0][0] + arr[0][1] + arr[0][2]
       wincheck4=arr[1][0] + arr[1][1] + arr[1][2]
       wincheck5 = arr[2][0] + arr[2][1] + arr[2][2]
@@ -39,7 +44,6 @@ def play_game():
       wincheck3=arr[0][0] + arr[1][1] + arr[2][2]
       wincheck8 = arr[0][2] + arr[1][2] + arr[2][0]
       '''make a search loop or better solution'''
-
       print('1   2   3')
       print('------------')
       for row in arr:
