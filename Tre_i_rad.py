@@ -15,7 +15,7 @@ def play_game():
         print(i, row)
         if (i >= 3):
             i = 0
-    while(not errormessagecomp or not errormessageyou):
+    while(not errormessagecomp or not errormessageyou or play_again):
       os.system('cls')
       x_guess = input('Select destination x')
       y_guess = input('Select destination y')
@@ -50,11 +50,23 @@ def play_game():
               i=0
       if wincheck1==3 or wincheck2==3 or wincheck3==3or wincheck4==3or wincheck5==3or wincheck6==3or wincheck7==3or wincheck8==3:
         print('you win')
-        break;
+        user_input=input('play again?y/n')
+        if user_input=='y':
+            play_again is True
+            arr = [[0 for i in range(cols)]
+                   for j in range(rows)]
+        else:
+         break;
 
       elif wincheck1==15 or wincheck2==15 or wincheck3==15or wincheck4==15or wincheck5==15or wincheck6==15or wincheck7==15or wincheck8==15:
           print('computer win')
-          break
+          user_input = input('play again?y/n')
+          if user_input == 'y':
+              play_again is True
+              arr = [[0 for i in range(cols)]
+                     for j in range(rows)]
+          else:
+              break;
 
 
 play_game()
