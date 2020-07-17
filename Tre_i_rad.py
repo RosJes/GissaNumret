@@ -1,8 +1,14 @@
 import random
 import os
+'''Solution to one loop:
+is here switches to true and error message to false
+if errormessage is false the loop will jump to the beginning, well in the beginning 
+there is an if condition: is here true and errormessage komp is now true since the switch is back to normal
+'''
 rows, cols = (3, 3)
 errormessageyou=False;
 errormessagecomp=False
+is_here=False;
 play_again=True
 def play_game():
     i = 0
@@ -16,12 +22,16 @@ def play_game():
         if (i >= 3):
             i = 0
     while(not errormessagecomp or not errormessageyou or play_again):
+      if(errormessagecomp is True and is_here is True):
+          comp_movex = random.randint(0, 2)
+          comp_movey = random.randint(0, 2)
+          arr[int(comp_movex)][int(comp_movey)] = 5
+
       os.system('cls')
       x_guess = input('Select destination x')
       y_guess = input('Select destination y')
       if arr[int(x_guess)][int(y_guess)]!=0:
           print("The destination is occupied")
-          errormessageyou is True
 
       else:
           arr[int(x_guess)][int(y_guess)] = 1
@@ -29,7 +39,11 @@ def play_game():
       comp_movey = random.randint(0, 2)
       print(comp_movey,comp_movex)
       if arr[int(comp_movex)][int(comp_movey)] !=0:
-          errormessageyou is True
+        print('computer fucked up')
+        is_here is True
+        errormessagecomp is False
+
+
       else:
           arr[int(comp_movex)][int(comp_movey)] = 5
 
