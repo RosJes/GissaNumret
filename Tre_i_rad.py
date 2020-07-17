@@ -4,36 +4,37 @@ import random
 '''figure out user input, what happens?'''
 '''What classes do you need? player etc.'''
 '''Learn classes,methods etc.'''
-
 '''display field nad choosing coordinates'''
 ''''''
 rows, cols = (3, 3)
-win=False
+errormessageyou=False;
+errormessagecomp=False
 def play_game():
     i = 0
     play_rows = 1
     arr = [[0 for i in range(cols)]
            for j in range(rows)]
-
     print('  1   2   3')
     for row in arr:
         i += 1
         print(i, row)
         if (i >= 3):
             i = 0
-    while(True):
+    while(not errormessagecomp or errormessageyou):
       x_guess = input('Select destination x')
       y_guess = input('Select destination y')
-      comp_movex=random.randint(0, 2)
-      comp_movey=random.randint(0, 2)
-      play_rows+=1
+      if arr[int(x_guess)][int(y_guess)]!=0:
+          print('you fucked up')
+          errormessageyou is True
+      else:
+          arr[int(x_guess)][int(y_guess)] = 1
+      comp_movex = random.randint(0, 2)
+      comp_movey = random.randint(0, 2)
 
-      if arr[int(comp_movex)][int(comp_movey)] !=0 or arr[int(x_guess)][int(y_guess)]!=0:
-          print('you cannot rewrite your own or opponents move! try again')
-          '''put a while loop in here'''
+      if arr[int(comp_movex)][int(comp_movey)] !=0:
+          errormessageyou is True
       else:
           arr[int(comp_movex)][int(comp_movey)] = 5
-          arr[int(x_guess)][int(y_guess)] = 1
 
       wincheck1 = arr[0][0] + arr[0][1] + arr[0][2]
       wincheck4=arr[1][0] + arr[1][1] + arr[1][2]
@@ -57,7 +58,6 @@ def play_game():
       elif wincheck1==15 or wincheck2==15 or wincheck3==15or wincheck4==15or wincheck5==15or wincheck6==15or wincheck7==15or wincheck8==15:
           print('computer win')
           break
-
 play_game()
 '''display field'''
 '''create method'''
@@ -71,6 +71,5 @@ write destination X= 1
 write destination Y=2
 the position of X is now [1,2]
     '''
-
 
 
