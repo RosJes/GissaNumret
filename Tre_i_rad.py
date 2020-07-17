@@ -1,31 +1,28 @@
 import random
-'''make a play field '''
-'''what is the game structure?'''
-'''figure out user input, what happens?'''
-'''What classes do you need? player etc.'''
-'''Learn classes,methods etc.'''
-'''display field nad choosing coordinates'''
-''''''
+import os
 rows, cols = (3, 3)
 errormessageyou=False;
 errormessagecomp=False
+play_again=False
 def play_game():
     i = 0
     play_rows = 1
     arr = [[0 for i in range(cols)]
            for j in range(rows)]
-    print('  1   2   3')
+    print(' 1   2   3 ')
     for row in arr:
         i += 1
         print(i, row)
         if (i >= 3):
             i = 0
-    while(not errormessagecomp or errormessageyou):
+    while(not errormessagecomp or not errormessageyou):
+      os.system('cls')
       x_guess = input('Select destination x')
       y_guess = input('Select destination y')
       if arr[int(x_guess)][int(y_guess)]!=0:
-          print('you fucked up')
+          print("The destination is occupied")
           errormessageyou is True
+
       else:
           arr[int(x_guess)][int(y_guess)] = 1
       comp_movex = random.randint(0, 2)
@@ -44,7 +41,6 @@ def play_game():
       wincheck7 = arr[0][2] + arr[1][2] + arr[2][2]
       wincheck3=arr[0][0] + arr[1][1] + arr[2][2]
       wincheck8 = arr[0][2] + arr[1][2] + arr[2][0]
-      '''make a search loop or better solution'''
       print('1   2   3')
       print('------------')
       for row in arr:
@@ -59,17 +55,6 @@ def play_game():
           print('computer win')
           break
 play_game()
-'''display field'''
-'''create method'''
-'''user input'''
-'''computer input'''
-'''clear terminal'''
-'''make logic with koordinations ex 1,2'''
-'''the user changes the zero to X with specification
-the user input can ba f example this:
-write destination X= 1
-write destination Y=2
-the position of X is now [1,2]
-    '''
+
 
 
