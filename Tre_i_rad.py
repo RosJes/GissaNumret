@@ -45,7 +45,7 @@ def play_game():
         wincheck7 = arr[0][2] + arr[1][2] + arr[2][2]
         wincheck3 = arr[0][0] + arr[1][1] + arr[2][2]
         wincheck8 = arr[0][2] + arr[1][2] + arr[2][0]
-        wincheck9=arr[0][2] + arr[1][1] + arr[2][0]
+        wincheck9 = arr[0][2] + arr[1][1] + arr[2][0]
 
         print('x.0   x.1   x.2')
         print('------------')
