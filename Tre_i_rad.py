@@ -11,30 +11,29 @@ play_again = True
 
 
 def play_game():
-    i = 0
-    play_rows = 1
+    i = -1
     arr = [[0 for i in range(cols)]
            for j in range(rows)]
-    print(' 1   2   3 ')
+    print(' x.0   x.1  x.2 ')
     for row in arr:
         i += 1
-        print(i, row)
-        if (i >= 3):
-            i = 0
+        print('y.',i, row)
+        if (i >= 2):
+            i = -1
     while (play_again):
         os.system('cls')
-        x_guess = input('Select destination x')
-        y_guess = input('Select destination y')
+        x_guess = input('Select destination y')
+        y_guess = input('Select destination x')
         if arr[int(x_guess)][int(y_guess)] != 0:
-            print("The destination is occupied")
+            print("The destination is occupied your round doesn't count sorry...")
 
         else:
             arr[int(x_guess)][int(y_guess)] = 1
         comp_movex = random.randint(0, 2)
         comp_movey = random.randint(0, 2)
-        print(comp_movey, comp_movex)
         if arr[int(comp_movex)][int(comp_movey)] != 0:
-            print('computer fucked up it chose the same coordinates as you ')
+            print("computer chose the same coordinates as you"
+                  "(continue playing it's my fault really sigh...)")
         else:
             arr[int(comp_movex)][int(comp_movey)] = 5
 
@@ -48,13 +47,13 @@ def play_game():
         wincheck8 = arr[0][2] + arr[1][2] + arr[2][0]
         wincheck9=arr[0][2] + arr[1][1] + arr[2][0]
 
-        print('1   2   3')
+        print('x.0   x.1   x.2')
         print('------------')
         for row in arr:
             i += 1
-            print(i, row)
-            if (i >= 3):
-                i = 0
+            print('y.',i, row)
+            if (i >= 2):
+                i = -1
         if wincheck1 == 3 or wincheck2 == 3 or wincheck3 == 3 or wincheck4 == 3 or wincheck5 == 3 or wincheck6 == 3 or wincheck7 == 3 or wincheck8 == 3 or wincheck9==3:
             print('you win')
             user_input = input('play again?y/n')
